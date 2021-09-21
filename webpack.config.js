@@ -1,10 +1,8 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
-const dotenv = require('dotenv').config();
 
 module.exports = () => {
-  console.log('aquiiiiiii', dotenv);
   return {
     entry: './src/index.js',
     output: {
@@ -45,8 +43,8 @@ module.exports = () => {
       new ModuleFederationPlugin({
         name: 'App',
         remotes: {
-          HomeApp: `HomeApp@${dotenv.parsed.APP_HOME}`,
-          ContactApp: `ContactApp@${dotenv.parsed.APP_CONTACT}`,
+          HomeApp: `HomeApp@${process.env.APP_HOME}`,
+          ContactApp: `ContactApp@${process.env.APP_CONTACT}`,
         }
       })
     ]
