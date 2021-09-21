@@ -4,6 +4,7 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const dotenv = require('dotenv').config();
 
 module.exports = () => {
+  console.log('aquiiiiiii', dotenv);
   return {
     entry: './src/index.js',
     output: {
