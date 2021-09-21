@@ -1,9 +1,7 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
-const dotenv = require('dotenv').config( {
-  path: path.join(__dirname, '.env')
-} );
+const dotenv = require('dotenv').config();
 
 module.exports = () => {
   return {
