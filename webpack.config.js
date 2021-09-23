@@ -10,7 +10,7 @@ module.exports = () => {
       path: path.resolve(__dirname, './dist'),
       publicPath: '/',
     },
-    mode: 'production',
+    mode: 'development',
     devServer: {
       port: 9001,
       historyApiFallback: true,
@@ -43,8 +43,8 @@ module.exports = () => {
       new ModuleFederationPlugin({
         name: 'App',
         remotes: {
-          HomeApp: `HomeApp@${process.env.APP_HOME}`,
-          ContactApp: `ContactApp@${process.env.APP_CONTACT}`,
+          HomeApp: `HomeApp@https://youthful-goldwasser-a59467.netlify.app/remoteEntry.js`,
+          ContactApp: `ContactApp@https://peaceful-carson-5a1832.netlify.app/remoteEntry.js`,
         }
       })
     ]
