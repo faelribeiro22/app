@@ -8,6 +8,8 @@ const App = () => {
 
   const HomePage = React.lazy(() => import("HomeApp/HomePage"));
   const ContactPage = React.lazy(() => import("ContactApp/ContactPage"));
+  const callInApp = (val) => console.log('call in app', val);
+
   window.testeInfo = "testeInfo";
 
   return(
@@ -24,7 +26,7 @@ const App = () => {
         <Switch>
           <Route exact path="/">
             <Suspense fallback={<div>Loading...</div>}>
-              <HomePage />
+              <HomePage submitButton={callInApp}/>
             </Suspense>
           </Route>
           <Route exact path="/contact">
