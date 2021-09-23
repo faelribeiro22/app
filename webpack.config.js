@@ -8,7 +8,7 @@ module.exports = () => {
     output: {
       filename: '[name].js',
       path: path.resolve(__dirname, './dist'),
-      publicPath: '/',
+      publicPath: 'https://epic-stonebraker-ca9df9.netlify.app/',
     },
     mode: 'development',
     devServer: {
