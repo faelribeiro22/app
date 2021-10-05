@@ -7,6 +7,7 @@ import './app.css';
 const App = () => {
 
   const HomePage = React.lazy(() => import("HomeApp/HomePage"));
+  const TesteComponent = React.lazy(() => import("HomeApp/Teste"));
   const ContactPage = React.lazy(() => import("ContactApp/ContactPage"));
   const callInApp = (val) => console.log('call in app', val);
 
@@ -27,6 +28,7 @@ const App = () => {
           <Route exact path="/">
             <Suspense fallback={<div>Loading...</div>}>
               <HomePage submitButton={callInApp}/>
+              <TesteComponent/>
             </Suspense>
           </Route>
           <Route exact path="/contact">
