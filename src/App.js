@@ -27,7 +27,7 @@ const App = () => {
         <Switch>
           <Route exact path="/">
             <Suspense fallback={<div>Loading...</div>}>
-              <HomePage submitButton={callInApp}/>
+              <HomePage submitButton={callInApp} nameButton="Um novo dia pra testar"/>
               <TesteComponent/>
             </Suspense>
           </Route>
